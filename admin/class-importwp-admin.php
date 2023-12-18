@@ -52,6 +52,21 @@ class Importwp_Admin {
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
 
+		add_action("admin_menu", array($this, "option_page"));
+	}
+
+	public function option_page() {
+		add_options_page(
+			"Import Options",
+			"Import Wordpress",
+			"manage_options",
+			"import-options",
+			array($this, 'render'),
+		);
+	}
+
+	public function render() {
+		require plugin_dir_path(dirname(__FILE__)) . 'admin/partials/importwp-admin-display.php';
 	}
 
 	/**

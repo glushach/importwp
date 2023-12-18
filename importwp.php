@@ -15,7 +15,7 @@
  * @wordpress-plugin
  * Plugin Name:       ImportWp
  * Plugin URI:        https://http://wordpress.loc
- * Description:       Плагин, который импортирует товары в Woocommerce
+ * Description:       Плагин, который импортирует товары в базу Woocommerce
  * Version:           1.0.0
  * Author:            Webformyself
  * Author URI:        https://http://wordpress.loc/
@@ -63,6 +63,7 @@ register_deactivation_hook( __FILE__, 'deactivate_importwp' );
  * admin-specific hooks, and public-facing site hooks.
  */
 require plugin_dir_path( __FILE__ ) . 'includes/class-importwp.php';
+require plugin_dir_path( __FILE__ ) . 'includes/class-import-wp.php';
 
 /**
  * Begins execution of the plugin.
@@ -79,4 +80,5 @@ function run_importwp() {
 	$plugin->run();
 
 }
-run_importwp();
+
+add_action('init', 'run_importwp');

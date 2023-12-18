@@ -13,4 +13,10 @@
  */
 ?>
 
-<!-- This file should primarily consist of HTML with a little bit of PHP. -->
+<div class="xml">
+  <h1>Import</h1>
+  <form action="" method="post" novalidate="novalidate">
+    <div class="submit"><input type="submit" name="submit" id="submit" class="button button-primary" value="Импортировать сейчас"></div>
+    <input type="hidden" name="action" value="import">
+  </form>
+</div>
